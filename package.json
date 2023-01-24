@@ -1,0 +1,22 @@
+{
+  "name": "scaffold-flow",
+  "version": "1.0.0",
+  "description": "🏗 forkable Flow dev stack focused on fast product iterations",
+  "private": true,
+  "devDependencies": {},
+  "scripts": {
+    "blocktalk:dev": "yarn workspace blocktalk dev"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "keywords": [
+    "yarn",
+    "flow",
+    "cadence",
+    "react",
+    "yarn"
+  ]
+}
