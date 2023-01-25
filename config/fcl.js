@@ -1,6 +1,6 @@
 import { config } from '@onflow/fcl'
 import { ACCESS_NODE_URLS } from '../constants'
-import flowJSON from '../packages/blocktalk/flow.json'
+import flowJSON from '../flow.json'
 
 const flowNetwork = process.env.NEXT_PUBLIC_FLOW_NETWORK
 

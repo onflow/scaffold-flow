@@ -7,9 +7,6 @@
 	"accounts": {
 		"emulator-account": {
 			"fromFile": "./emulator.private.json"
-		},
-    "testnet-account": {
-			"fromFile": "./testnet-account.private.json"
 		}
 	},
   "contracts": {
@@ -23,11 +20,6 @@
   "deployments": {
 		"emulator": {
 			"emulator-account": [
-				"BlockTalk"
-			]
-		},
-		"testnet": {
-			"testnet-account": [
 				"BlockTalk"
 			]
 		}

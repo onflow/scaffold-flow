@@ -9,7 +9,7 @@ export default function Home() {
       
       <Head>
         <title>BlockTalk</title>
-        <meta name="description" content="Mint Tweets on the Flow Blockchain" />
+        <meta name="description" content="Mint messages on the Flow Blockchain" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -19,7 +19,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Mint Tweets or Write Directly on the Flow Blockchain
+          Mint BlockTalks directly on the Flow Blockchain
         </p>
 
         <Link href="/mints">
