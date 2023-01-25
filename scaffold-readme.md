@@ -1,5 +1,7 @@
 This is a scaffold for an FCL NextJS Dapp on the Flow Blockchain.
 
+__flow-cli is required to run this application__
+
 ## Features Provided
 
 - FCL setup and configuration
