@@ -18,7 +18,7 @@ export default function NavigationBar() {
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
-          <Nav classname="me-auto">
+          <Nav>
             {!user.loggedIn && <Button onClick={fcl.authenticate}>Log In With Wallet</Button>}
             {user.loggedIn && <Button onClick={fcl.unauthenticate}>Log Out Of Wallet</Button>}
           </Nav>
