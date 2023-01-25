@@ -70,7 +70,7 @@ Enter an account name: testnet
 			"source": "./cadence/contracts/BlockTalk.cdc",
 			"aliases": {
 				"emulator": "0xf8d6e0586b0a20c7",
-        // "testnet": "0xtestnet_service_account_address"
+        "testnet": "0x0000000000000000" // testnet service account address goes here
 			}
 		}
 	}
