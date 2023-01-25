@@ -64,7 +64,7 @@ Enter an account name: testnet
 ```
 
 2. Then in `flow.json`, add your testnet address prefixed with an `0x` as an alias for `testnet` just like `emulator`:
-```json
+```
 	"contracts": {
 		"BlockTalk": {
 			"source": "./cadence/contracts/BlockTalk.cdc",
