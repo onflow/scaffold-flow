@@ -14,7 +14,7 @@ export default function NavigationBar() {
         <Navbar.Toggle />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/mints">Post</Nav.Link>
+            <Nav.Link href="/mints">Mint</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
