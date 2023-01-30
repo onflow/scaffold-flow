@@ -76,7 +76,7 @@ This will automatically create `./testnet.private.json` in your root directory a
 	},
 ```
 
-2. Then in `flow.json`, add your testnet address prefixed with an `0x` as an alias for `testnet` just like `emulator`, add the same `testnet` field to deploy the Blocktalk contract on testnet:
+2. Then in `flow.json`, add your testnet address prefixed with an `0x` as an alias for `testnet` just like `emulator`:
 ```
 	"contracts": {
 		"BlockTalk": {
@@ -89,7 +89,7 @@ This will automatically create `./testnet.private.json` in your root directory a
 	},
 ```
 
- Add the same `testnet` field to deploy the Blocktalk contract on testnet
+ Add the same `testnet` field to deploy the Blocktalk contract on testnet:
 
  ```
  "deployments": {
@@ -106,7 +106,7 @@ This will automatically create `./testnet.private.json` in your root directory a
 	},
  ```
 
-3. Add your testnet service address to your local `.env` file 
+3. Add your testnet service address to your local `.env` file:
 ```
 NEXT_PUBLIC_FLOW_NETWORK="emulator"
 CONTRACT_ADDRESS="0x0000000000000000"
