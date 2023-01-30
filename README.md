@@ -63,6 +63,19 @@ flow accounts create
 Enter an account name: testnet
 ```
 
+This will automatically create `./testnet.private.json` in your root directory as well as add a reference to the account in `flow.json`:
+
+```
+"accounts": {
+		"emulator-account": {
+			"fromFile": "./emulator.private.json"
+		},
+		"testnet": {
+			"fromFile": "./testnet.private.json" // automatically generated
+		}
+	},
+```
+
 2. Then in `flow.json`, add your testnet address prefixed with an `0x` as an alias for `testnet` just like `emulator`:
 ```
 	"contracts": {
@@ -73,10 +86,33 @@ Enter an account name: testnet
         "testnet": "0x0000000000000000" // testnet service account address goes here
 			}
 		}
-	}
+	},
 ```
 
-3. Use this command to deploy your contract(s) to the testnet service account and initialize the App in Testnet:
+ Add the same `testnet` field to deploy the Blocktalk contract on testnet:
+
+ ```
+ "deployments": {
+		"emulator": {
+			"emulator-account": [
+				"BlockTalk"
+			]
+		},
+    "testnet": {       // add this object
+      "testnet": [
+        "BlockTalk"
+      ]
+    }
+	},
+ ```
+
+3. Add your testnet service address to your local `.env` file:
+```
+NEXT_PUBLIC_FLOW_NETWORK="emulator"
+CONTRACT_ADDRESS="0x0000000000000000"
+```
+
+4. Use this command to deploy your contract(s) to the testnet service account and initialize the App in Testnet:
 ```bash
 npm run dev:testnet:deploy
 ```
@@ -88,3 +124,10 @@ npm run dev:testnet:deploy
 npm run dev:testnet:update
 ```
 
+### TroubleShooting
+
+Multiple Testnet Service Accounts:
+
+Once the `BlockTalk` contract has been deployed to a service account, NFTs minted will be tied to this contract/service account. **IF** you deploy the same contract to a different service account, you are essentially duplicating the dapp between the 2 service accounts. This will cause your user to run into a fatal where the user is attempting to mint. (Will attempt to create the same storage path for 2 "different" dapps)
+
+![duplicate storage path error](./public/duplicate_storage_path_error.png)
