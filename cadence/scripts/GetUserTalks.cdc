@@ -1,4 +1,4 @@
-import "BlockTalk"
+import BlockTalk from 0xBlockTalk
 
 pub struct TalkMetadata {
   pub let id: UInt64
@@ -35,3 +35,4 @@ pub fun main(address: Address): [TalkMetadata] {
 
   return talks
 }
+ 
