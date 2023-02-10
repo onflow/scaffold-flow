@@ -3,7 +3,7 @@
 		"BlockTalk": {
 			"source": "./cadence/contracts/BlockTalk.cdc",
 			"aliases": {
-				"emulator": "0xf8d6e0586b0a20c7"
+				"testnet": "0xc374b1c161d8bd76"
 			}
 		}
 	},
@@ -13,13 +13,25 @@
 		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
+		"default": {
+			"address": "120e725050340cab",
+			"key": "94cfc4e4de0174ab4546fe4e4657bfd3bf3812aa0bd58f0978d170541d649ee3"
+		},
 		"emulator-account": {
 			"fromFile": "./emulator.private.json"
+		},
+		"testnet": {
+			"fromFile": "testnet.private.json"
 		}
 	},
 	"deployments": {
 		"emulator": {
-			"emulator-account": [
+			"default": [
+				"BlockTalk"
+			]
+		},
+		"testnet": {
+			"testnet": [
 				"BlockTalk"
 			]
 		}

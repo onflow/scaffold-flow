@@ -13,3 +13,4 @@ config({
   'app.detail.icon': 'https://avatars.githubusercontent.com/u/62387156?v=4',
   'app.detail.title': 'FCL Next Scaffold'
 }).load({ flowJSON })
+ 

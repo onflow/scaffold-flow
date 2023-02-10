@@ -8,3 +8,4 @@ export const BLOCK_EXPLORER_URLS = {
   'testnet': 'https://testnet.flowscan.org',
   'mainnet': 'https://flowscan.org'
 }
+ 

@@ -35,3 +35,4 @@ pub fun main(address: Address): [TalkMetadata] {
 
   return talks
 }
+ 
