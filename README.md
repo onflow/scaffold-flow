@@ -49,85 +49,24 @@ flow emulator start
 flow dev-wallet
 ```
 
-3. In a different terminal (Last one, promise!), use this command to deploy your contract(s) and initialize the App:
+3. In a different terminal, use this Flow-CLI command to deploy and manage your contracts. This listener will automatically update and redeploy your contracts as you work!
+
 ```bash
-npm run dev:local:deploy
+flow dev
+```
+
+> Ensure your account address is prefixed with `0x`. Add the prefix if missing.
+> ```
+> "default": {
+>   "address": "0x0000000000000000", // confirm this address has the prefix
+>   "key": "0000000000000000000000000000000000000000000000000000000000000000"
+> },
+> ```
+
+
+4. In a different terminal (Last one, promise!), use this command to deploy your contract(s) and initialize the App:
+```bash
+npm run dev
 ```
 4. You're done! Checkout the App at http://localhost:3000
-
-### Testnet
-
-1. For running your app on Testnet, you will need a Testnet service account to deploy your app's contracts to. You can create one by using this Flow-CLI command. Follow the steps and select testnet. This will create a `testnet-account.private.json` file:
-```bash
-flow accounts create
-Enter an account name: testnet
-```
-
-This will automatically create `./testnet.private.json` in your root directory as well as add a reference to the account in `flow.json`:
-
-```
-"accounts": {
-		"emulator-account": {
-			"fromFile": "./emulator.private.json"
-		},
-		"testnet": {
-			"fromFile": "./testnet.private.json" // automatically generated
-		}
-	},
-```
-
-2. Then in `flow.json`, add your testnet address prefixed with an `0x` as an alias for `testnet` just like `emulator`:
-```
-	"contracts": {
-		"BlockTalk": {
-			"source": "./cadence/contracts/BlockTalk.cdc",
-			"aliases": {
-				"emulator": "0xf8d6e0586b0a20c7",
-        "testnet": "0x0000000000000000" // testnet service account address goes here
-			}
-		}
-	},
-```
-
- Add the same `testnet` field to deploy the Blocktalk contract on testnet:
-
- ```
- "deployments": {
-		"emulator": {
-			"emulator-account": [
-				"BlockTalk"
-			]
-		},
-    "testnet": {       // add this object
-      "testnet": [
-        "BlockTalk"
-      ]
-    }
-	},
- ```
-
-3. Add your testnet service address to your local `.env` file:
-```
-NEXT_PUBLIC_FLOW_NETWORK="emulator"
-CONTRACT_ADDRESS="0x0000000000000000"
-```
-
-4. Use this command to deploy your contract(s) to the testnet service account and initialize the App in Testnet:
-```bash
-npm run dev:testnet:deploy
-```
-
-4. You're done! Checkout the App at http://localhost:3000
-
-5. [Bonus] After changing your contracts, you can redeploy them to your testnet service account by running this command:
-```bash
-npm run dev:testnet:update
-```
-
-### TroubleShooting
-
-Multiple Testnet Service Accounts:
-
-Once the `BlockTalk` contract has been deployed to a service account, NFTs minted will be tied to this contract/service account. **IF** you deploy the same contract to a different service account, you are essentially duplicating the dapp between the 2 service accounts. This will cause your user to run into a fatal where the user is attempting to mint. (Will attempt to create the same storage path for 2 "different" dapps)
-
-![duplicate storage path error](./public/duplicate_storage_path_error.png)
+ 
