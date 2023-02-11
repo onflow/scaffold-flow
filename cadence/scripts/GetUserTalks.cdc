@@ -1,4 +1,4 @@
-import BlockTalk from 0xBlockTalk
+import "BlockTalk"
 
 pub struct TalkMetadata {
   pub let id: UInt64

@@ -1,4 +1,4 @@
-import BlockTalk from 0xBlockTalk
+import "BlockTalk"
 
 // This transaction creates a new tweet with an argument
 transaction (body: String, tweetID: String?) {
