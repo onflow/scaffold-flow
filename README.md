@@ -127,7 +127,7 @@ _💡 We are not using flow dev command, since that is meant to be used during r
 
 First we need to add a testnet deployment for our contract by running:
 ```bash
-config add deployment
+flow config add deployment
 ```
 And choosing the testnet as a network, the account name we just created, and the contract that needs to be deployed:
 ```
