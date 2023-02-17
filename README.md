@@ -88,19 +88,19 @@ Open the application at http://localhost:3000
 
 <button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
 
+---
 
 ### Testnet Deployment
 If you want to go further and deploy the dApp to our testnet you can proceed with the next steps.
 
 **1. Create a Testnet Account**
 
-Run the account create command and set the name to `alice` as well as choose the testnet network. 
+Run the account create command and choose any name but pick the testnet network. 
 
-_💡 We advise you to use the `alice` as the account name, so you can skip configuration steps as we preconfigured deployments with account named alice for you._
 ```bash
 flow accounts create
 ```
-This is what you should see (the address will be different):
+This is what you should see (the address and name will be different):
 ```
 ✔ Enter an account name: alice
 
@@ -125,15 +125,42 @@ Running project deploy command will deploy application contracts to testnet.
 
 _💡 We are not using flow dev command, since that is meant to be used during rapid local development which shouldn't be done on testnet._ 
 
+First we need to add a testnet deployment for our contract by running:
+```bash
+config add deployment
+```
+And choosing the testnet as a network, the account name we just created, and the contract that needs to be deployed:
+```
+? Choose network for deployment:
+    emulator
+    mainnet
+    sandboxnet
+  ▸ testnet
+  
+? Choose an account to deploy to:
+    ▸ alice
+    emulator-account
+    
+? Choose contract you wish to deploy:
+  ▸ BlockTalk
+  
+✔ testnet
+✔ alice
+✔ BlockTalk
+✔ No
+```
+And then run this command to deploy our just configured deployment:
 ```bash
 flow project deploy --network testnet --update
 ```
 
 **3. Build Web Application**
 
-Running this command will build your next.js application.
+Running this command will build your next.js application. We must replace the address with 
+the account address we just created in the step 1. 
+_You can look into flow.json if you cleared the output._
 ```bash
-npm run dev:testnet
+CONTRACT_ADDRESS={account address} npm run dev:testnet
 ```
 
 <button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
