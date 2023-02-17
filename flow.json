@@ -9,32 +9,9 @@
 		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
-		"alice": {
-			"address": "c088532127dfa500",
-			"key": {
-				"type": "file",
-				"location": "testnet.pkey"
-			}
-		},
-		"default": {
-			"address": "f3fcd2c1a78f5eee",
-			"key": "30553fc566d9f13667da3f4bc8bb1651cf3b2963af12e73afbd27cd643b5dce1"
-		},
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
 			"key": "484c32b2a65327a493fddcd8c193cd08d181c2c00dca17c9595fde662e1c7866"
-		}
-	},
-	"deployments": {
-		"emulator": {
-			"default": [
-				"BlockTalk"
-			]
-		},
-		"testnet": {
-			"alice": [
-				"BlockTalk"
-			]
 		}
 	}
 }
