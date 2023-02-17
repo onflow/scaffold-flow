@@ -16,7 +16,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@onflow/fcl": "^1.4.0-alpha.1",
+    "@onflow/fcl": "^1.4.0-alpha.3",
     "bootstrap": "^5.2.3",
     "buffer": "^6.0.3",
     "next": "13.0.0",
