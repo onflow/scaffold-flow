@@ -84,4 +84,4 @@ npm run dev
 
 Open the application at http://localhost:3000
 
-<button name="button" onclick="http://localhost:3000">Open Application</button>
+<button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
