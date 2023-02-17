@@ -5,18 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "dev:local": "NEXT_PUBLIC_FLOW_NETWORK=local npm run dev",
-    "dev:local:deploy": "flow project deploy --network=emulator --update && NEXT_PUBLIC_FLOW_NETWORK=local npm run dev",
     "dev:testnet": "NEXT_PUBLIC_FLOW_NETWORK=testnet npm run dev",
-    "dev:testnet:deploy": "flow project deploy --network=testnet --update && NEXT_PUBLIC_FLOW_NETWORK=testnet npm run dev",
-    "dev:testnet:update": "flow project deploy --network=testnet --update",
-    "dev:mainnet": "NEXT_PUBLIC_FLOW_NETWORK=mainnet npm run dev",
     "test": "jest",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@onflow/fcl": "^1.4.0-alpha.3",
+    "@onflow/fcl": "^1.4.0-alpha.1",
     "bootstrap": "^5.2.3",
     "buffer": "^6.0.3",
     "next": "13.0.0",
