@@ -69,6 +69,7 @@ flow emulator & flow dev-wallet
 ```
 
 **2. Deploy Contracts**
+
 Running dev command will automatically deploy and update application contracts.
 
 ```bash
@@ -76,12 +77,63 @@ flow dev
 ```
 
 **3. Build Web Application**
+
 Running this command will build your next.js application.
 ```bash
-npm run dev
+npm run dev:local
 ```
 **4. You're done!**
 
 Open the application at http://localhost:3000
+
+<button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
+
+
+### Testnet Deployment
+If you want to go further and deploy the dApp to our testnet you can proceed with the next steps.
+
+**1. Create a Testnet Account**
+
+Run the account create command and set the name to `alice` as well as choose the testnet network. 
+
+_💡 We advise you to use the `alice` as the account name, so you can skip configuration steps as we preconfigured deployments with account named alice for you._
+```bash
+flow accounts create
+```
+This is what you should see (the address will be different):
+```
+✔ Enter an account name: alice
+
+? Choose a network:
+    Emulator
+  ▸ Testnet
+    Mainnet
+    
+🎉 New account created with address 0x9e3251b6a0958efd and name alice on Testnet network.
+
+Here’s a summary of all the actions that were taken:
+ - Added the new account to flow.json.
+ - Saved the private key to testnet.pkey.
+ - Added testnet.pkey to .gitignore.
+```
+
+As written this created a new testnet account for us and saved the key to a separate file for improved security.
+
+**2. Deploy Contracts**
+
+Running project deploy command will deploy application contracts to testnet. 
+
+_💡 We are not using flow dev command, since that is meant to be used during rapid local development which shouldn't be done on testnet._ 
+
+```bash
+flow project deploy --network testnet --update
+```
+
+**3. Build Web Application**
+
+Running this command will build your next.js application.
+```bash
+npm run dev:testnet
+```
 
 <button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
