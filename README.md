@@ -86,8 +86,6 @@ npm run dev:local
 
 Open the application at http://localhost:3000
 
-<button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
-
 ---
 
 ### Testnet Deployment
@@ -163,4 +161,6 @@ _You can look into flow.json if you cleared the output._
 CONTRACT_ADDRESS={account address} npm run dev:testnet
 ```
 
-<button name="button" style="padding:15px;border:none;background-color:#00ef8b;font-weight:bold" onclick="http://localhost:3000">Open Application</button>
+**4. You are done!**
+
+Open the application at http://localhost:3000
